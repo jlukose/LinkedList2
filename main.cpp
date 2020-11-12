@@ -116,26 +116,17 @@ int print(Node* ptr){
   return 0;
 }
 
-//WIP
 int deleteStudent(int deleteID, Node* currentNode){//delete by id
   Student* student;
   Node* prev;
   if(head == NULL){//if list is empty
-    cout << "List Empty" << endl;
     return 0;
   }
   if(*head->getStudent()->getID() == deleteID){//if deleting head
     cout << "deleting head" << endl;
     Node* temp = NULL;
-    cout << "A" << endl;
     temp = head;
-    cout << "B" << endl;
     head = head->getNext();
-    cout << "C" << endl;
-    delete temp->getStudent();
-    cout << "D" << endl;
-    delete temp;
-    cout << "E" << endl;
     return 0;
   }
   else{//check next node
@@ -146,8 +137,6 @@ int deleteStudent(int deleteID, Node* currentNode){//delete by id
       Node* temp = NULL;
       temp = next;
       prev->setNext(next->getNext());
-      delete temp->getStudent();
-      delete temp;
       return 0;
     }    
     if(next != NULL && *next->getStudent()->getID() != deleteID){//repeat on next node
