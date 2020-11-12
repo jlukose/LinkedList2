@@ -161,14 +161,14 @@ int deleteStudent(int deleteID, Node* currentNode){//delete by id
   return 0;
 }
 
-//WIP
 float average(Node* ptr){//uses recursion to add up gpa and number of students, returns average
+  ptr = head;
   float sum = 0;
   int nstudents = 0;
-  while (ptr->getNext != NULL){
-    sum = sum + *ptr->getNext()->getStudent()->getGPA();
-    ptr = ptr->getNext();
+  while (ptr != NULL){
+    sum = sum + *ptr->getStudent()->getGPA();
     nstudents++;
+    ptr = ptr->getNext();
   }
   return(sum/nstudents);
 }
