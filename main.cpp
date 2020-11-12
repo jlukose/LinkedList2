@@ -139,7 +139,7 @@ int deleteStudent(int deleteID, Node* currentNode){//delete by id
       prev->setNext(next->getNext());
       return 0;
     }    
-    if(next != NULL && *next->getStudent()->getID() != deleteID){//repeat on next node
+    if(next != NULL && *next->getStudent()->getID() != deleteID){//repeat on next node using recursion
       deleteStudent(deleteID, next);
       return 0;
     }
